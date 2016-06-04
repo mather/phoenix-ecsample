@@ -1,6 +1,5 @@
 defmodule Ecsample.User do
   use Ecsample.Web, :model
-  #import Ecto.Changeset, only: [put_change: 3]
 
   schema "users" do
     field :name, :string
@@ -36,6 +35,6 @@ defmodule Ecsample.User do
   end
 
   defp hashed_password(raw_password) do
-    raw_password
+    Comeonin.Bcrypt.hashpwsalt(raw_password)
   end
 end
