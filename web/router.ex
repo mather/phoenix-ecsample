@@ -19,9 +19,13 @@ defmodule Ecsample.Router do
     get "/", PageController, :index
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
-    
+
     get "/signup", SignupController, :new
     post "/signup", SignupController, :create
+
+    get  "/login",  SessionController, :new
+    post "/login",  SessionController, :create
+    get  "/logout", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.

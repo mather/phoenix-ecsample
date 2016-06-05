@@ -25,6 +25,9 @@ defmodule Ecsample.User do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> unique_constraint(:email)
+    |> validate_length(:password, min: 8)
+    |> validate_length(:name,     min: 1)
+    |> validate_length(:address,  min: 1)
   end
 
   def create(changeset, repo) do
