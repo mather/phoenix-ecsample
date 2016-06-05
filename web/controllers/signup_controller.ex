@@ -12,8 +12,10 @@ defmodule Ecsample.SignupController do
 
     case User.create(changeset, Ecsample.Repo) do
       {:ok, created_user} ->
-        # signin the user
-        redirect conn, to: "/"
+        conn
+        |> put_session(:current_user, created_user.id)
+        |> put_flash(:info, "Your account has been created")
+        |> redirect(to: "/")
       {:error, changeset} ->
         render conn, "new.html", user: changeset
     end
