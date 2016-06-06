@@ -3,7 +3,7 @@ defmodule Ecsample.UserTest do
 
   alias Ecsample.User
 
-  @valid_attrs %{address: "some content", crypted_password: "some content", email: "some content", name: "some content"}
+  @valid_attrs %{address: "some content", password: "some content", email: "some content", name: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
