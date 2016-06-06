@@ -1,5 +1,7 @@
 # Ecsample
 
+[![Build Status](https://travis-ci.org/mather/phoenix-ecsample.svg?branch=master)](https://travis-ci.org/mather/phoenix-ecsample)
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
